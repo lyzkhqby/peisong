@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui" name="viewport" />
+        <meta content="yes" name="apple-mobile-web-app-capable" />
+        <link rel="stylesheet" type="text/css" href="css/global.css">
+    </head>
+    <body>
+		<div id="index">
+			<div class="shoplist">
+				<ul class="list_ul">
+					<li v-for="(product, index) in products" class="list-li">
+						<a class="normal-list" href="#">
+							<div class="list_img">
+								<img src="images/shop.jpg" alt={{product.name}}>
+							</div>
+							<div class="list_text" style="border:none;">
+								<div class="list_title">{{product.name}}</div>
+								<div class="list_normal"></div>
+								<div class="list_price">
+									<span>￥{{product.price}}</span>
+								</div>
+							</div>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="bottom-bar-pannel">
+				<div>
+					<ul>
+						<li class="bottom-li">
+							<a>
+								<img class="bottom-img" src="./images/a-home.png">
+							</a>
+						</li>
+						<li class="bottom-li">
+							<a>
+								<img class="bottom-img" src="./images/a-cart.png">
+							</a>
+						</li>
+						<li class="bottom-li">
+							<a>
+								<img class="bottom-img"  src="./images/a-me.png">
+							</a>
+
+						</li>
+					</ul>
+				</div>
+
+			</div>
+		</div>
+		<script src="./javascripts/vue.min.js"></script>
+		<script src="./javascripts/index.js"></script>
+    </body>
+</html>

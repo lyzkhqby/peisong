@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui" name="viewport" />
+        <meta content="yes" name="apple-mobile-web-app-capable" />
+        <link rel="stylesheet" type="text/css" href="css/global.css">
+
+    </head>
+    <body>
+		<div id="cart">
+			<header class="product_header">
+				<div class="header_bar">
+					<a href=""><img src="images/header-fh.png" height="20" width="20"></a>
+					<span>购物车</span>
+				</div>
+			</header>
+			<div class="shop_group">
+				<div class="shop_group_item">
+					<h3 class="qx">
+						<input type="checkbox"
+							   v-model="allChoiced"
+						       v-on:change="choiceAll">全选
+					</h3>
+					<ul class="shop_cart_list">
+						<li v-for="(product, index) in products" :key="product.id" class="product_group">
+							<div class="itmes">
+								<div class="check_wrapper">
+									<input type="checkbox"
+										   v-on:change="choice(product)"
+									       v-model="product.isChoiced">
+								</div>
+								<div class="itmes_cart_item">
+									<a class="itmes_cart_img">
+										<img src="images/cart.jpg">
+									</a>
+									<div class="itmes_cart_text">
+										<div class="itmes_cart_title">{{product.name}}</div>
+										<div class="itmes_cart_cell">
+											<span class="itmes_cart_price">￥{{product.price}}</span>
+											<div class="quantity">
+												<a class="number" v-on:click="minus(product)">-</a>
+												<span class="account">{{product.count}}</span>
+												<a class="number" v-on:click="add(product)">+</a>
+											</div>
+										</div>
+										<div v-on:click="delProduct(index)" class="itmes_cart_delete">
+											<span>删除</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="cart_bottom">
+				<a class="cart_bottom_hj">合计：{{calcTotalPrice}}</a>
+				<a class="cart_bottom_qjs">去结算</a>
+			</div>
+		</div>
+		<script src="./javascripts/vue.min.js"></script>
+		<script src="./javascripts/cart.js"></script>
+    </body>
+</html>
