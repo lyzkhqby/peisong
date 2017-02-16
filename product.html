@@ -5,46 +5,59 @@
         <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui" name="viewport" />
         <meta content="yes" name="apple-mobile-web-app-capable" />
         <link rel="stylesheet" type="text/css" href="css/global.css">
+		<!-- 引入样式 -->
+		<link rel="stylesheet" href="css/style.css">
+
     </head>
     <body>
-        <header class="product_header">
-        	<div class="header_bar">
-        		<a href=""><img src="images/header-fh.png" height="20" width="20"></a>
-        		<span>商品详情</span>
-        	</div>
-        </header>
-        <div class="product_content">
-        	<div class="scroll_imgs">
-        		<img src="images/shop.jpg">
-        	</div>
-        	<div class="content_title">
-        		<div class="title_top">【买即送餐具套装】沃德百惠 保温饭盒保温桶多层可组合学生儿童便当盒不锈钢四层</div>
-        		<div class="title_bottom">
-        			<span>￥49.90</span>
-        			<span class="kc">(库存：100)</span>
-        		</div>
-        	</div>
-        	<div class="content_mrt">
-        		<div class="content_spec">
-        			<span class="msg">已选</span>
-        			<div class="spec_txt">长方形750ml*2 </div>
-        		</div>
-        	</div>
-        	<div class="content_mrt">
-        		<div class="content_send">
-        			<span class="msg">送至</span>
-        			<div class="send_to">河南省洛阳市西工区</div>
-        		</div>
-        	</div>
-        	<div class="product_img">
-        		<div class="img_bt">图文详情</div>
-        		<img src="images/1.jpg">
-        		<img src="images/2.jpg">
-        	</div>
-        </div>
-        <div class="bottom">
-        	<a class="bottom_gwc">加入购物车</a>
-        	<a class="bottom_ljgm">立即购买</a>
-        </div>
+		<div id="product">
+			<header class="product_header">
+				<div class="header_bar">
+					<a href=""><img src="images/header-fh.png" height="20" width="20"></a>
+					<span>商品详情</span>
+				</div>
+			</header>
+			<div class="product_content">
+				<div class="scroll_imgs">
+					<mt-swipe :auto="0">
+						<mt-swipe-item v-for="pic in product.titlePics"><img v-bind:src="pic"></mt-swipe-item>
+					</mt-swipe>
+					<!--<img v-bind:src="product.titlePic">-->
+				</div>
+				<div class="content_title">
+					<div class="title_top">{{product.name}}</div>
+					<div class="title_bottom">
+						<span>￥{{product.price}}</span>
+						<span class="kc">(库存：{{product.count}})</span>
+					</div>
+				</div>
+				<div class="content_mrt">
+					<div class="content_spec">
+						<span class="msg">已选</span>
+						<div class="spec_txt">长方形750ml*2 </div>
+					</div>
+				</div>
+				<div class="content_mrt">
+					<div class="content_send">
+						<span class="msg">送至</span>
+						<div class="send_to">河南省洛阳市西工区</div>
+					</div>
+				</div>
+				<div class="product_img">
+					<div class="img_bt">图文详情</div>
+					<img v-for="detail in product.details" v-bind:src="detail">
+
+				</div>
+			</div>
+			<div class="bottom">
+				<a class="bottom_gwc">加入购物车</a>
+				<a class="bottom_ljgm">立即购买</a>
+			</div>
+		</div>
+		<script src="./javascripts/vue.min.js"></script>
+		<!-- 引入组件库 -->
+		<script src="./javascripts/mintUI.js"></script>
+		<script src="./javascripts/product.js"></script>
+
     </body>
 </html>
