@@ -22,13 +22,12 @@
 					<mt-swipe :auto="0">
 						<mt-swipe-item v-for="pic in product.titlePics"><img v-bind:src="pic"></mt-swipe-item>
 					</mt-swipe>
-					<!--<img v-bind:src="product.titlePic">-->
 				</div>
 				<div class="content_title">
-					<div class="title_top">{{product.name}}</div>
+					<div class="title_top" v-text="product.name"></div>
 					<div class="title_bottom">
-						<span>￥{{product.price}}</span>
-						<span class="kc">(库存：{{product.count}})</span>
+						<span v-text="'￥'+ product.price">￥</span>
+						<span class="kc" v-text="'(库存：'+product.count+')'"></span>
 					</div>
 				</div>
 				<div class="content_mrt">
@@ -39,7 +38,7 @@
 				</div>
 				<div class="content_mrt">
 					<div class="content_send">
-						<span class="msg">送</span>
+						<span class="msg">送至</span>
 						<div class="send_to">河南省洛阳市西工区</div>
 					</div>
 				</div>

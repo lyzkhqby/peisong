@@ -20,7 +20,7 @@
 					<h3 class="qx">
 						<input type="checkbox"
 							   v-model="allChoiced"
-						       v-on:change="choiceAll">全选
+						       v-on:click="choiceAll">全选
 					</h3>
 					<ul class="shop_cart_list">
 						<li v-for="(product, index) in products" :key="product.id" class="product_group">
@@ -28,7 +28,7 @@
 								<div class="check_wrapper">
 									<input type="checkbox"
 										   class="check"
-										   v-on:change="choice(product)"
+										   v-on:click="choice(product)"
 									       v-model="product.isChoiced">
 								</div>
 								<div class="itmes_cart_item">
@@ -36,12 +36,12 @@
 										<img src="images/cart.jpg">
 									</a>
 									<div class="itmes_cart_text">
-										<div class="itmes_cart_title">{{product.name}}</div>
+										<div class="itmes_cart_title" v-text="product.name"></div>
 										<div class="itmes_cart_cell">
-											<span class="itmes_cart_price">￥{{product.price}}</span>
+											<span class="itmes_cart_price" v-text="'￥'+ product.price"></span>
 											<div class="quantity">
 												<a class="number" v-on:click="minus(product)">-</a>
-												<span class="account">{{product.count}}</span>
+												<span class="account" v-text="product.count"></span>
 												<a class="number" v-on:click="add(product)">+</a>
 											</div>
 										</div>

@@ -63,9 +63,17 @@ a:hover {
 }
 
 /*商品列表*/
+.my-location{
+    font-size:12px;
+    color:#666;
+}
+#container{
+    width: 0px;
+    height: 0px;
+}
 .shoplist{width:100%; height:auto; position: relative; overflow: hidden; margin-bottom: 50px; }
 .shoplist .list_ul{width:100%; overflow: hidden; box-sizing: border-box;}
-.shoplist .list-li{border-bottom: solid lightgray;}
+.shoplist .list-li{border-bottom: solid lightgray 1px;}
 .shoplist .list_ul li{height:120px; position: relative;}
 .shoplist .list_ul .normal-list{
     display: -webkit-box;
@@ -113,8 +121,8 @@ a:hover {
     position: fixed;
     top: 0;
     left: 0;
-    border-bottom:1px
-    solid #d7d7d7;
+    border-bottom:1px solid #d7d7d7;
+    z-index: 1;
 }
 .product_header .header_bar{width: 100%; background: #efefef url(../images/header-bg.png) repeat-x 0 0; background-size: 100% 44px; min-height: 44px; z-index: 20;}
 .product_header .header_bar a{display:block; width: 40px; height:44px; padding: 12px 0 0 10px; box-sizing: border-box; position: absolute;}
